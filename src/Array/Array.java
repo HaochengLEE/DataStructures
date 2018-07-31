@@ -6,6 +6,7 @@ package Array;
  **/
 
 public class Array<E> {
+
     private E arr[];
     private int size;
     /*
@@ -75,6 +76,17 @@ public class Array<E> {
         return arr[index];
 
     }
+
+    //取最后一个元素
+
+    public E getLast(){
+        return get(size-1);
+    }
+
+    public E getFirst(){
+        return get(0);
+
+    }
     //改变索引位置的元素
     public E set(int index,E e){
         if(index<0||index>=size){
@@ -130,6 +142,11 @@ public class Array<E> {
         return remove(0);
     }
 
+    //删除最后一个元素
+    public E removeLast(){
+        return remove(size-1);
+    }
+
     //从数组中删除元素e
     public boolean removeElement(E e){
         int index=find(e);
@@ -140,11 +157,18 @@ public class Array<E> {
         return false;
     }
 
+    //数组是否为空
+    public boolean isEmpty(){
+        if(arr.length==0)
+            return true;
+        return false;
+    }
+
     @Override
     public String toString(){
         StringBuilder res=new StringBuilder();
         res.append(String.format("Array:size=%d,capacity=%d\n",size,arr.length));
-        res.append('[');
+        res.append("[");
         for(int i=0;i<size;i++){
             res.append((arr[i]));
             if(i!=size-1){
