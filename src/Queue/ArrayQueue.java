@@ -31,8 +31,8 @@ public class ArrayQueue<E> implements Queue<E>{
     }
 
     @Override
-    public E getFront() {
-        return null;
+    public int getFront() {
+        return 0;
     }
 
     @Override
