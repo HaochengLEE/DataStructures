@@ -124,11 +124,11 @@ public class Array<E> {
             throw new IllegalArgumentException("Fail");
         }
         E ret=arr[index];
-        for(int i=index;i<size;i++){
-            arr[i]=arr[i+1];
+        for(int i=index+1;i<size;i++){
+            arr[i-1]=arr[i];
         }
         size--;
-        if(size--==arr.length/4&&arr.length/2!=0){
+        if(size==arr.length/4&&arr.length/2!=0){
             System.out.println("删除一半内存");
             resize(arr.length/2);
         }
@@ -162,6 +162,10 @@ public class Array<E> {
         if(arr.length==0)
             return true;
         return false;
+    }
+
+    public int getCapacity(){
+        return arr.length;
     }
 
     @Override

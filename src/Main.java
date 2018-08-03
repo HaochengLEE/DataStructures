@@ -1,5 +1,6 @@
 import Array.Array;
 import Array.Student;
+import Queue.ArrayQueue;
 import Stack.ArrayStack;
 
 /**
@@ -40,20 +41,33 @@ public class Main {
 //        arr1.addLast(new Student("Lihao",110));
 //        System.out.println(arr1);
 //栈
-        ArrayStack<Integer> stack=new ArrayStack<Integer>();
-
+//        ArrayStack<Integer> stack=new ArrayStack<Integer>();
+//
+//        for(int i=0;i<5;i++){
+//            stack.push(i);
+//            System.out.println(stack);
+//
+//        }
+//
+//        stack.pop();
+//        System.out.println(stack);
+        //队列
+        ArrayQueue<Integer> queue=new ArrayQueue<Integer>();
         for(int i=0;i<5;i++){
-            stack.push(i);
-            System.out.println(stack);
+            queue.enqueue(i);
+            System.out.println(queue);
 
         }
 
-        stack.pop();
-        System.out.println(stack);
+        queue.dequeue();
+        System.out.println(queue);
+
+
 
 
 
 
     }
+
 
 }
